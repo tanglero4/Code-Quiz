@@ -1,11 +1,17 @@
+:root{
+    --main: blueviolet;
+}
 body{
     text-align: center;
     font-size: 30px;
     line-height: 1.5;
+    background-image: url("./assets/image/pink-sky.webp");
+    background-size: cover;
 }
 header ul{
     display: flex;
     justify-content: space-between;
+    color: var(--main);
 }
  li {
     text-decoration: none;
@@ -16,21 +22,24 @@ a{
     text-decoration: none;
 }
 main{
-padding-top: 5vh;
+padding-top: 20vh;
 padding-bottom: 4vh;
 }
 
 h1{
     font-size: 40px;
+    color: var(--main);
 }
-main ul{
-    margin: 0vh 20vh;
+p{
+    margin: 0vh 30vh;
 }
 button{
-     border: 6px solid blueviolet;
+     border: 2px solid var(--main); 
      border-radius: 8px;
-     background-color: blueviolet;
-     color: white;
+     color: var(--main);
+}
+button:hover{
+     cursor:pointer;
 }
 .hide{
     display: none;

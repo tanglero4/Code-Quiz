@@ -3,8 +3,8 @@ const count = document.getElementById(`timer`);
 setInterval(startTimer, 1000)
 
 function startTimer(){
-    const seconds= time % 60;
-    count.innerHTML = `Timer: ${time}`;
+    const seconds= time % 60
+    count.innerHTML = `Timer: ${time}`
     time --;
     if(time === 0){
        showHighScores();
@@ -17,13 +17,16 @@ let question={
     correctAnswer: 2
 }
 
+let btn= document.getElementById(`btn`)
+let instruction= document.getElementById(`hide`)
 
-let btn= document.getElementById(`btn`);
 btn.addEventListener(`click`, function showQuestion(x){
-btn.classList.add(`hide`);
+btn.classList.add(`hide`)
+instruction.classList.add(`hide`)
+
 // select h1 element
-    let titleH1= document.getElementById(`title`);
-    titleH1.textContent = question.title;
+    let titleH1= document.getElementById(`title`)
+    titleH1.textContent = question.title
 
 // select li to display answers
     let answerli1= document.getElementById(`answer1`);
