@@ -3,7 +3,7 @@ body{
     font-size: 30px;
     line-height: 1.5;
 }
-ul{
+header ul{
     display: flex;
     justify-content: space-between;
 }
@@ -16,16 +16,14 @@ a{
     text-decoration: none;
 }
 main{
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
 padding-top: 5vh;
 padding-bottom: 4vh;
 }
+
 h1{
     font-size: 40px;
 }
-p{
+main ul{
     margin: 0vh 20vh;
 }
 button{
@@ -33,4 +31,7 @@ button{
      border-radius: 8px;
      background-color: blueviolet;
      color: white;
+}
+.hide{
+    display: none;
 }
