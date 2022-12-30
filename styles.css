@@ -1,0 +1,36 @@
+body{
+    text-align: center;
+    font-size: 30px;
+    line-height: 1.5;
+}
+ul{
+    display: flex;
+    justify-content: space-between;
+}
+ li {
+    text-decoration: none;
+    padding: 1vh;
+    border-radius: 4px;
+}
+a{
+    text-decoration: none;
+}
+main{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding-top: 5vh;
+padding-bottom: 4vh;
+}
+h1{
+    font-size: 40px;
+}
+p{
+    margin: 0vh 20vh;
+}
+button{
+     border: 6px solid blueviolet;
+     border-radius: 8px;
+     background-color: blueviolet;
+     color: white;
+}
