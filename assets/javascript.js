@@ -25,7 +25,7 @@ let question = [
       `C: booleans`,
       `D: All of the above`,
     ],
-    correctAnswer: 3,
+    correctAnswer: `D: All of the above`,
   },
   {
     title: ` String values must be enclosed within ____ when being assigned to variables.`,
@@ -35,7 +35,7 @@ let question = [
       `C: quotes`,
       `D: parenthesis`,
     ],
-    correctAnswer: 2,
+    correctAnswer: `C: quotes`,
   },
   {
     title: ` A very useful tool used during development and debugging for printing content to the debugger is: `,
@@ -45,7 +45,7 @@ let question = [
       `C: for loops`,
       `D: console.log`,
     ],
-    correctAnswer: 3,
+    correctAnswer: `D: console.log`,
   },
 ];
 
@@ -61,13 +61,17 @@ function showQuestion() {
   // select h1 element
   let titleH1 = document.getElementById(`title`);
   titleH1.textContent = question[index].title;
-  // select li to display answers
+
   answerUl.innerHTML = ``;
+  // Loop through questions
   for (i = 0; i < question[index].possibleAnswers.length; i++) {
     console.log(question[index].possibleAnswers);
+    // create button element
     var answerbtn = document.createElement("button");
+    // Add answers to the new buttons
     answerbtn.innerHTML = question[index].possibleAnswers[i];
     console.log(answerbtn);
+    // add buttons under the ul
     answerUl.appendChild(answerbtn);
 
     answerbtn.onclick = checkAnswer;
@@ -75,7 +79,9 @@ function showQuestion() {
 }
 
 function checkAnswer() {
-  console.log(this);
+  // create function for correct answers and find how to tell it what question its on
+  //   if (this.innerHTML == question.correctAnswer) {
+  //   }
   if (question.length > index) {
     index++;
     showQuestion();
