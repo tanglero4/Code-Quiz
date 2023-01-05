@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <title>View High Scores</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="index.html">Take Quiz</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="high-scores">
+      <h1>High Scores</h1>
+      <form id="user-form">
+        <input
+          type="text"
+          id="initial"
+          placeholder="Type your initials here ..."
+          id="user-initial"
+          name="user-initial" />
+      </form>
+      <ul id="initial-list"></ul>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <script src="./assets/javascript.js"></script>
+      <script src="./assets/scores.js"></script>
+    </section>
+  </body>
+</html>

@@ -39,6 +39,13 @@ button {
 button:hover {
   cursor: pointer;
 }
+input {
+  border-color: var(--main);
+  color: rgb(50, 241, 187);
+}
 .hide {
   display: none;
+}
+#high-scores {
+  padding-top: 18vh;
 }

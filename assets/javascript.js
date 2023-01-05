@@ -1,4 +1,4 @@
-let time = 60;
+let time = 10;
 const count = document.getElementById(`timer`);
 // setInterval(startTimer, 1000)
 let timeInterval;
@@ -53,6 +53,7 @@ let btn = document.getElementById(`btn`);
 let instruction = document.getElementById(`hide`);
 let answerUl = document.getElementById(`answer-list`);
 let index = 0;
+
 function showQuestion() {
   btn.classList.add(`hide`);
   instruction.classList.add(`hide`);
@@ -65,7 +66,7 @@ function showQuestion() {
   answerUl.innerHTML = ``;
   // Loop through questions
   for (i = 0; i < question[index].possibleAnswers.length; i++) {
-    console.log(question[index].possibleAnswers);
+    // console.log(question[index].possibleAnswers);
     // create button element
     var answerbtn = document.createElement("button");
     // Add answers to the new buttons
@@ -77,12 +78,20 @@ function showQuestion() {
     answerbtn.onclick = checkAnswer;
   }
 }
-
+// check answer
 function checkAnswer() {
-  // create function for correct answers and find how to tell it what question its on
-  //   if (this.innerHTML == question.correctAnswer) {
-  //   }
-  if (question.length > index) {
+  // // create function for correct answers and find how to tell it what question its on
+  // if (this.innerHTML === question.correctAnswer) {
+  //   console.log(`correct`);
+  // }
+  console.log(
+    this.innerHTML,
+    "user answer",
+    question[index].correctAnswer,
+    "correct answer"
+  );
+  if (this.innerHTML === question[index].correctAnswer) {
+    console.log(this.innerHTML === question[index].correctAnswer);
     index++;
     showQuestion();
   }
@@ -90,7 +99,7 @@ function checkAnswer() {
 
 btn.addEventListener(`click`, showQuestion);
 
+// directs to view highscores page
 function showHighScores() {
-  console.log(`you won!`);
+  window.location.href = "viewhighscores.html";
 }
-// showQuestion();
