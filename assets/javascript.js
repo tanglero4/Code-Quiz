@@ -1,4 +1,4 @@
-let time = 10;
+let time = 60;
 const count = document.getElementById(`timer`);
 // setInterval(startTimer, 1000)
 let timeInterval;
@@ -80,18 +80,23 @@ function showQuestion() {
 }
 // check answer
 function checkAnswer() {
-  // // create function for correct answers and find how to tell it what question its on
-  // if (this.innerHTML === question.correctAnswer) {
-  //   console.log(`correct`);
-  // }
   console.log(
     this.innerHTML,
     "user answer",
     question[index].correctAnswer,
     "correct answer"
   );
-  if (this.innerHTML === question[index].correctAnswer) {
+  if (this.innerHTML !== question[index].correctAnswer) {
     console.log(this.innerHTML === question[index].correctAnswer);
+    // var wrongAnswer = document.getElementById(`wrong`);
+    // wrongAnswer.innerHTML = `Wrong!`;
+    document.getElementById(`wrong`).style.display = "block";
+    index++;
+    showQuestion();
+  } else if (this.innerHTML === question[index].correctAnswer) {
+    // var correctAnswer = document.getElementById(`correct`);
+    // correctAnswer.innerHTML = `Correct!`;
+    document.getElementById(`correct`).style.display = "block";
     index++;
     showQuestion();
   }

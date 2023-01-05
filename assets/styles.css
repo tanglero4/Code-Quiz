@@ -30,7 +30,10 @@ h1 {
   font-size: 40px;
   color: var(--main);
 }
-
+h2 {
+  font-size: 30px;
+  color: var(--main);
+}
 button {
   border: 2px solid var(--main);
   border-radius: 8px;
@@ -43,7 +46,16 @@ input {
   border-color: var(--main);
   color: rgb(50, 241, 187);
 }
+br {
+  border: 2px solid var(--main);
+}
 .hide {
+  display: none;
+}
+#correct {
+  display: none;
+}
+#wrong {
   display: none;
 }
 #high-scores {
