@@ -11,7 +11,6 @@ function startTimer() {
       clearInterval(timeInterval);
       time = 0;
       count.innerHTML = `Timer: ${time}`;
-      showHighScores();
     }
   }, 1000);
 }
@@ -91,6 +90,7 @@ function checkAnswer() {
     // var wrongAnswer = document.getElementById(`wrong`);
     // wrongAnswer.innerHTML = `Wrong!`;
     document.getElementById(`wrong`).style.display = "block";
+    time -= 10;
     index++;
     showQuestion();
   } else if (this.innerHTML === question[index].correctAnswer) {
