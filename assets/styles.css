@@ -46,9 +46,6 @@ input {
   border-color: var(--main);
   color: rgb(50, 241, 187);
 }
-br {
-  border: 2px solid var(--main);
-}
 .hide {
   display: none;
 }
