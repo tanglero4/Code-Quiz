@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/reset.css" />
     <link rel="stylesheet" href="./assets/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet" />
     <title>View High Scores</title>
   </head>
-  <body>
+  <body class="arcade">
     <nav>
       <ul id="restart-quiz">
         <li>
-          <a href="index.html">Take Quiz</a>
+          <a href="index.html">Restart Quiz</a>
         </li>
       </ul>
     </nav>
@@ -21,13 +26,12 @@
       <form id="user-form">
         <input
           type="text"
-          placeholder="Type your initials here ..."
+          placeholder="Enter initials ..."
           id="user-initial"
           name="user-initial" />
       </form>
       <button class="btn">Submit</button>
       <ol type="1"></ol>
-
       <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
       <script src="./assets/javascript.js"></script>
       <script src="./assets/scores.js"></script>
