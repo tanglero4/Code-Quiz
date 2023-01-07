@@ -102,9 +102,11 @@ function checkAnswer() {
   }
 }
 
+
 btn.addEventListener(`click`, showQuestion);
 
 // directs to view highscores page
 function showHighScores() {
+  
   window.location.href = "viewhighscores.html";
 }

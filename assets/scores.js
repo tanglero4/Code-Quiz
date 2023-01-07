@@ -1,32 +1,44 @@
-var userFormEl = $("#user-form");
-var initialListEl = $("#initial-list");
+// var userFormEl = $("#user-form");
+// var initialListEl = $("#initial-list");
 
-function showScores(event) {
-  //   Prevent the default behavior
-  event.preventDefault();
+$(".btn").on("click", function () {
+  //get user input from form
+  const userInitial = document.getElementById("user-initial").value;
 
-  var userInitial = $('input[name="user-initial"]').val();
+  //sets up local storage or make an array to add user input
+  let initials = JSON.parse(localStorage.getItem("Initials")) || [];
 
-  if (!userInitial) {
-    console.log("Please enter your initials");
-    return;
-  }
+  // save the users input to local storage
+  initials.push(userInitial);
+  localStorage.setItem("Initials", JSON.stringify(initials));
+});
 
-  var initialListItemEl = $(
-    '<li class="flex-row justify-space-between align-center p-2 bg-light text-dark ">'
-  );
-  initialListItemEl.text(userInitial);
+// function showScores(event) {
+//   //   Prevent the default behavior
+//   event.preventDefault();
 
-  // add delete button to remove shopping list item
-  initialListItemEl.append(
-    '<button class="btn btn-danger btn-small delete-item-btn">Remove</button>'
-  );
+//   var userInitial = $('input[name="user-initial"]').val();
 
-  // print to the page
-  initialListEl.append(initialListItemEl);
-  console.log(initialListEl);
-  // clear the form input element
-  $('input[name="user-initial"]').val("");
-}
+//   if (!userInitial) {
+//     console.log("Please enter your initials");
+//     return;
+//   }
 
-userFormEl.on("submit", showScores);
+//   var initialListItemEl = $(
+//     '<li class="flex-row justify-space-between align-center p-2 bg-light text-dark ">'
+//   );
+//   initialListItemEl.text(userInitial);
+
+//   // add delete button to remove shopping list item
+//   initialListItemEl.append(
+//     '<button class="btn btn-danger btn-small delete-item-btn">Remove</button>'
+//   );
+
+//   // print to the page
+//   initialListEl.append(initialListItemEl);
+//   console.log(initialListEl);
+//   // clear the form input element
+//   $('input[name="user-initial"]').val("");
+// }
+
+// userFormEl.on("submit", showScores);
