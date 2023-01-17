@@ -57,7 +57,7 @@ function showQuestion() {
   btn.classList.add(`hide`);
   instruction.classList.add(`hide`);
   startTimer();
-  console.log(index);
+  // console.log(index);
   // select h1 element
   let titleH1 = document.getElementById(`title`);
   titleH1.textContent = question[index].title;
@@ -70,41 +70,48 @@ function showQuestion() {
     var answerbtn = document.createElement("button");
     // Add answers to the new buttons
     answerbtn.innerHTML = question[index].possibleAnswers[i];
-    console.log(answerbtn);
+    // console.log(answerbtn);
     // add buttons under the ul
     answerUl.appendChild(answerbtn);
 
     answerbtn.onclick = checkAnswer;
   }
 }
+
+btn.addEventListener(`click`, showQuestion);
+
+// function endQuiz() {
+//   if (question.length === index) {
+//     console.log(question[index].length);
+//     showHighScores();
+//   }
+// }
 // check answer
 function checkAnswer() {
-  console.log(
-    this.innerHTML,
-    "user answer",
-    question[index].correctAnswer,
-    "correct answer"
-  );
   if (this.innerHTML !== question[index].correctAnswer) {
-    console.log(this.innerHTML === question[index].correctAnswer);
+    // console.log(this.innerHTML === question[index].correctAnswer);
     // var wrongAnswer = document.getElementById(`wrong`);
     // wrongAnswer.innerHTML = `Wrong!`;
     document.getElementById(`wrong`).style.display = "block";
     time -= 10;
     index++;
-    showQuestion();
+    // showQuestion();
   } else if (this.innerHTML === question[index].correctAnswer) {
     // var correctAnswer = document.getElementById(`correct`);
     // correctAnswer.innerHTML = `Correct!`;
     document.getElementById(`correct`).style.display = "block";
     index++;
+    // showQuestion();
+  }
+  if (time <= 0 || index === question.length) {
+    showHighScores();
+  } else {
     showQuestion();
   }
 }
 
-btn.addEventListener(`click`, showQuestion);
-
 // directs to view highscores page
 function showHighScores() {
+  clearInterval(timeInterval);
   window.location.href = "viewhighscores.html";
 }
